@@ -3,26 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zaid HMI | Software Developer</title>
+  <title>ZAID -HMI | Software Developer</title>
   <style>
-    body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-    .card { max-width: 600px; background: #1e293b; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-    h1 { color: #38bdf8; margin-top: 0; }
-    ul { line-height: 1.8; color: #cbd5e1; }
-    a { color: #38bdf8; text-decoration: none; }
+    :root {
+      --bg: #0b0f17;
+      --surface: #121826;
+      --surface-hover: #182134;
+      --text: #e6edf3;
+      --muted: #9aa7b8;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --border: #232d42;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 920px; margin: 0 auto; }
+    header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: 2.1rem; line-height: 1.2; margin-bottom: 0.75rem; }
+    .bio { color: var(--muted); max-width: 68ch; margin-bottom: 1.5rem; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: 8px;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+    .btn-primary { background: var(--accent); color: #061018; }
+    .btn-primary:hover { background: #67cdf9; transform: translateY(-1px); }
+    .btn-secondary { background: var(--surface-hover); color: var(--text); border: 1px solid var(--border); }
+    .btn-secondary:hover { border-color: var(--accent); }
+    section { margin-bottom: 2.25rem; }
+    h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .skills-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.35rem;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+    .card:hover { background: var(--surface-hover); border-color: #33415c; }
+    .card h3 { font-size: 1.05rem; margin-bottom: 0.45rem; }
+    .card p { color: var(--muted); font-size: 0.92rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.85rem; }
+    .tag {
+      font-size: 0.78rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+    }
+    .project-link {
+      display: inline-block;
+      margin-top: 0.9rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .project-link:hover { text-decoration: underline; }
+    footer { text-align: center; color: var(--muted); font-size: 0.88rem; padding-top: 1rem; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Zaid HMI (HAMI22-DVL)</h1>
-    <p>Independent Software Developer building desktop utilities, web applications, and local AI tools.</p>
-    <h3>Featured Projects</h3>
-    <ul>
-      <li><strong>AeroWeather:</strong> Modern Windows WPF desktop weather suite with 7-day forecasts.</li>
-      <li><strong>OmniFlash:</strong> Multi-platform mobile device servicing and diagnostics utility.</li>
-      <li><strong>NexusWindowsMasterPro:</strong> .NET 9 Windows system diagnostics and maintenance tool.</li>
-    </ul>
-    <p>GitHub: <a href="https://github.com/HAMI22-DVL">github.com/HAMI22-DVL</a></p>
+  <div class="container">
+    <header>
+      <span class="badge">Software Developer Portfolio</span>
+      <h1>ZAID -HMI</h1>
+      <p class="bio">
+        Software developer building desktop utilities, full-stack web applications, and automation tools
+        with Python, C#, TypeScript, Next.js, and Java. Focused on practical tooling, clean architecture,
+        and local AI workflows.
+      </p>
+      <div class="links">
+        <a class="btn btn-primary" href="https://github.com/HAMI22-DVL" target="_blank" rel="noopener noreferrer">
+          GitHub Profile (@HAMI22-DVL)
+        </a>
+        <a class="btn btn-secondary" href="https://github.com/HAMI22-DVL?tab=repositories" target="_blank" rel="noopener noreferrer">
+          View Repositories
+        </a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Core Stack &amp; Tooling</h2>
+      <div class="skills-grid">
+        <div class="card">
+          <h3>Web &amp; Backend</h3>
+          <p>Next.js, React, TypeScript, Tailwind CSS, Prisma, FastAPI, and SQLAlchemy.</p>
+        </div>
+        <div class="card">
+          <h3>Desktop &amp; Systems</h3>
+          <p>Python (CustomTkinter, PySide6), C# (.NET WPF), PowerShell automation, and Windows installers.</p>
+        </div>
+        <div class="card">
+          <h3>Enterprise &amp; AI</h3>
+          <p>Java with Vaadin, local LLM integration with Ollama, and developer workflow tooling.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+      <div class="projects-grid">
+        <article class="card">
+          <h3>TeacherApp</h3>
+          <p>
+            Educational assistant powered by FastAPI, Vite, and local Ollama models to generate and customize
+            structured teaching documents.
+          </p>
+          <div class="tag-list">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Ollama</span>
+          </div>
+          <a class="project-link" href="https://github.com/HAMI22-DVL" target="_blank" rel="noopener noreferrer">
+            Explore on GitHub &rarr;
+          </a>
+        </article>
+
+        <article class="card">
+          <h3>Windows Diagnostic &amp; Repair Suite</h3>
+          <p>
+            Desktop diagnostic and servicing utility combining C# WPF and Python CustomTkinter with embedded
+            terminal support for system maintenance tasks.
+          </p>
+          <div class="tag-list">
+            <span class="tag">C# / .NET</span>
+            <span class="tag">Python</span>
+            <span class="tag">PowerShell</span>
+          </div>
+          <a class="project-link" href="https://github.com/HAMI22-DVL" target="_blank" rel="noopener noreferrer">
+            Explore on GitHub &rarr;
+          </a>
+        </article>
+
+        <article class="card">
+          <h3>OUD-ROYALE</h3>
+          <p>
+            Full-stack e-commerce web application built with Next.js, React, TypeScript, Tailwind CSS, and
+            Prisma backed by PostgreSQL.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Prisma</span>
+          </div>
+          <a class="project-link" href="https://github.com/HAMI22-DVL" target="_blank" rel="noopener noreferrer">
+            Explore on GitHub &rarr;
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>ZAID -HMI &bull; GitHub: @HAMI22-DVL</p>
+    </footer>
   </div>
 </body>
 </html>
